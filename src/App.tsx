@@ -17,7 +17,11 @@ function App() {
   return (
     <div className="app">
       <ElevateLogo ref={logoRef} />
-      <button className="replay-button" onClick={handleReplay}>
+      <button
+        className="replay-button"
+        onClick={handleReplay}
+        aria-label="Replay the Elevate logo animation"
+      >
         Replay Animation
       </button>
     </div>

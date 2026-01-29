@@ -192,3 +192,38 @@
     transform: translate(0, 0) rotate(720deg) scale(1);
   }
 }
+
+/* ============================================
+   ACCESSIBILITY
+   Respects user preference for reduced motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .animating .star,
+  .animating .logo-wrapper,
+  .animating .wing-fill,
+  .animating .wing-line,
+  .animating .wing-curve-left,
+  .animating .wing-curve-right,
+  .animating .logo-text {
+    animation: none;
+  }
+
+  /* Ensure elements are visible in their final state */
+  .wing-line {
+    stroke-dashoffset: 0;
+  }
+  .wing-curve-left,
+  .wing-curve-right {
+    stroke-dashoffset: 0;
+  }
+  .wing-fill {
+    clip-path: polygon(0% 100%, 200% 100%, 100% 0%, 0% 0%);
+  }
+  .logo-text {
+    opacity: 1;
+  }
+  .star {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}

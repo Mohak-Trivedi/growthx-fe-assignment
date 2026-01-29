@@ -9,6 +9,8 @@ const ElevateLogo = forwardRef<HTMLDivElement>(function ElevateLogo(_, ref) {
           viewBox="0 0 300 180"
           className="logo-svg"
           xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Elevate logo with decorative wings and star"
         >
           {/* Wing horizontal line - thin stroke */}
           <line
