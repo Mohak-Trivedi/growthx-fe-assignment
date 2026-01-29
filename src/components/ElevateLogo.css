@@ -8,6 +8,7 @@
 .logo-svg {
   width: 400px;
   height: 240px;
+  overflow: visible;
 }
 
 /* ============================================
@@ -101,5 +102,44 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* ============================================
+   4-POINT STAR
+   Animates from top-left along arc to center above wing
+   Star final position: centered at (150, 40) in SVG coords
+   ============================================ */
+
+.star {
+  transform-box: fill-box;
+  transform-origin: center center;
+  /* Initial state matches 0% keyframe */
+  transform: translate(-60px, -16px) rotate(0deg) scale(0.29);
+  animation: starAnimation 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  will-change: transform;
+}
+
+/* Animation: star moves from top-left along arc to center above wing
+   Star starts at ~(105, 28), ends at (150, 40)
+   Arc path: starts top-left, moves right first, then curves down */
+@keyframes starAnimation {
+  0% {
+    transform: translate(-60px, -16px) rotate(0deg) scale(0.29);
+  }
+  20% {
+    transform: translate(-40px, -20px) rotate(144deg) scale(0.43);
+  }
+  40% {
+    transform: translate(-20px, -12px) rotate(288deg) scale(0.57);
+  }
+  60% {
+    transform: translate(-10px, -4px) rotate(432deg) scale(0.71);
+  }
+  80% {
+    transform: translate(-3px, -1px) rotate(576deg) scale(0.86);
+  }
+  100% {
+    transform: translate(0, 0) rotate(720deg) scale(1);
   }
 }

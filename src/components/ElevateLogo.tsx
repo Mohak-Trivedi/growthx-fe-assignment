@@ -44,6 +44,14 @@ function ElevateLogo() {
              Z"
           fill="#fff"
         />
+
+        {/* 4-point star - animates from top-left to center above wing 
+            Final size: 65 units (3.5cm), centered at (150, 40) */}
+        <path
+          className="star"
+          d="M150,7.5 Q154.875,35.125 182.5,40 Q154.875,44.875 150,72.5 Q145.125,44.875 117.5,40 Q145.125,35.125 150,7.5 Z"
+          fill="#fff"
+        />
       </svg>
 
       {/* ELEVATE text */}
