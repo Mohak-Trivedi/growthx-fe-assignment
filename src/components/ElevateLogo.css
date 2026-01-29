@@ -1,0 +1,130 @@
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.logo-svg {
+  width: 400px;
+  height: 240px;
+}
+
+/* ============================================
+   STAR ANIMATION
+   Scales from small to full size with glow
+   ============================================ */
+
+.star-group {
+  transform-origin: 150px 36px;
+  transform: scale(0);
+  animation: starReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes starReveal {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   WING HORIZONTAL LINE
+   Draws from center outward on both sides
+   ============================================ */
+
+.wing-line {
+  stroke-dasharray: 230;
+  stroke-dashoffset: 230;
+  animation: drawLine 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.08s forwards;
+}
+
+@keyframes drawLine {
+  0% {
+    stroke-dashoffset: 230;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ============================================
+   WING CURVES
+   Draw from bottom center point upward to edges
+   ============================================ */
+
+.wing-curve-left,
+.wing-curve-right {
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+}
+
+.wing-curve-left {
+  animation: drawCurve 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.wing-curve-right {
+  animation: drawCurve 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.02s forwards;
+}
+
+@keyframes drawCurve {
+  0% {
+    stroke-dashoffset: 160;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ============================================
+   WING FILL
+   Reveals from left to right
+   ============================================ */
+
+.wing-fill {
+  clip-path: inset(0 100% 0 0);
+  animation: revealWing 0.55s cubic-bezier(0.4, 0, 0.2, 1) 0.18s forwards;
+}
+
+@keyframes revealWing {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* ============================================
+   TEXT ANIMATION
+   Fades in after logo animation completes
+   ============================================ */
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.42em;
+  color: rgba(255, 255, 255, 0.88);
+  opacity: 0;
+  animation: fadeInText 0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards;
+  text-transform: uppercase;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
+    sans-serif;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
