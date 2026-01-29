@@ -14,6 +14,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Animated state - lift animation */
+.animating .logo-wrapper {
   animation: liftLogo 1s cubic-bezier(0.25, 0.1, 0.25, 1) 1.5s forwards;
 }
 
@@ -28,9 +32,14 @@
    Draws from center outward on both sides
    ============================================ */
 
+/* Base state - initial position */
 .wing-line {
   stroke-dasharray: 130;
   stroke-dashoffset: 130;
+}
+
+/* Animated state */
+.animating .wing-line {
   animation: drawLine 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.08s forwards;
 }
 
@@ -48,17 +57,19 @@
    Draw from bottom center point upward to edges
    ============================================ */
 
+/* Base state - initial position */
 .wing-curve-left,
 .wing-curve-right {
   stroke-dasharray: 90;
   stroke-dashoffset: 90;
 }
 
-.wing-curve-left {
+/* Animated state */
+.animating .wing-curve-left {
   animation: drawCurve 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.wing-curve-right {
+.animating .wing-curve-right {
   animation: drawCurve 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.02s forwards;
 }
 
@@ -76,8 +87,13 @@
    Reveals from left to right
    ============================================ */
 
+/* Base state - hidden */
 .wing-fill {
   clip-path: inset(0 100% 0 0);
+}
+
+/* Animated state */
+.animating .wing-fill {
   animation: revealWing 1.1s cubic-bezier(0.4, 0, 0.2, 1) 0.18s forwards;
 }
 
@@ -95,6 +111,7 @@
    Fades in after star settles, then lifts with logo
    ============================================ */
 
+/* Base state - hidden */
 .logo-text {
   font-size: 50px;
   font-weight: 600;
@@ -102,11 +119,15 @@
   text-align: center;
   color: rgba(255, 255, 255, 0.95);
   opacity: 0;
-  animation: fadeInText 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards;
   text-transform: uppercase;
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
     sans-serif;
+}
+
+/* Animated state */
+.animating .logo-text {
+  animation: fadeInText 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards;
 }
 
 /* Text fades in at position */
@@ -135,13 +156,17 @@
    Star final position: centered at (150, 40) in SVG coords
    ============================================ */
 
+/* Base state - initial position */
 .star {
   transform-box: fill-box;
   transform-origin: center center;
-  /* Initial state matches 0% keyframe */
   transform: translate(-60px, -16px) rotate(0deg) scale(0.29);
-  animation: starAnimation 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   will-change: transform;
+}
+
+/* Animated state */
+.animating .star {
+  animation: starAnimation 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 /* Animation: star moves from top-left along arc to center above wing

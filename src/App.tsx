@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useRef } from "react";
 import ElevateLogo from "./components/ElevateLogo";
 import "./App.css";
 
 function App() {
-  const [animationKey, setAnimationKey] = useState(0);
+  const logoRef = useRef<HTMLDivElement>(null);
 
   const handleReplay = () => {
-    setAnimationKey((prev) => prev + 1);
+    if (logoRef.current) {
+      logoRef.current.classList.remove("animating");
+      // Force browser reflow to ensure the class removal is registered
+      void logoRef.current.offsetHeight;
+      logoRef.current.classList.add("animating");
+    }
   };
 
   return (
     <div className="app">
-      <ElevateLogo key={animationKey} />
+      <ElevateLogo ref={logoRef} />
       <button className="replay-button" onClick={handleReplay}>
         Replay Animation
       </button>

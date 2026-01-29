@@ -1,8 +1,9 @@
+import { forwardRef } from "react";
 import "./ElevateLogo.css";
 
-function ElevateLogo() {
+const ElevateLogo = forwardRef<HTMLDivElement>(function ElevateLogo(_, ref) {
   return (
-    <div className="logo-container">
+    <div ref={ref} className="logo-container animating">
       <div className="logo-wrapper">
         <svg
           viewBox="0 0 300 180"
@@ -58,6 +59,6 @@ function ElevateLogo() {
       </div>
     </div>
   );
-}
+});
 
 export default ElevateLogo;
