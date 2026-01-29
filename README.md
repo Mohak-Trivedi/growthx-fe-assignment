@@ -2,6 +2,26 @@
 
 A React + TypeScript application featuring an animated "ELEVATE" logo with SVG graphics, including wing shapes and a 4-point star animation. The app includes a "Replay Animation" button to re-trigger the animation sequence.
 
+## Demo
+
+![Elevate Logo Animation Demo](./demo.gif)
+
+## Features
+
+- Smooth SVG path animations using CSS keyframes
+- 4-point star with rotation and scaling along an arc path
+- Wing reveal effect with clip-path animation
+- Horizontal line draws from center outward
+- Curved wing edges animate from bottom to top
+- Text fade-in with unified logo lift animation
+- Replay button to re-trigger the full animation sequence
+
+## Accessibility
+
+- Supports `prefers-reduced-motion` for users who are sensitive to motion
+- SVG includes `role="img"` and descriptive `aria-label` for screen readers
+- Interactive button has clear `aria-label` for assistive technologies
+
 ## Prerequisites
 
 Before running this application, make sure you have the following installed:
