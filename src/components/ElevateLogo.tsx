@@ -13,36 +13,36 @@ const ElevateLogo = forwardRef<HTMLDivElement>(function ElevateLogo(_, ref) {
           {/* Wing horizontal line - thin stroke */}
           <line
             className="wing-line"
-            x1="85"
+            x1="70"
             y1="78"
-            x2="215"
+            x2="230"
             y2="78"
             stroke="#fff"
             strokeWidth="0.75"
           />
 
-          {/* Wing curves - deep concave like circle quadrants */}
+          {/* Wing curves - quarter-circle arcs */}
           <path
             className="wing-curve-left"
-            d="M85 78 Q150 78 150 145"
+            d="M70 78 A 80 80 0 0 1 150 158"
             fill="none"
             stroke="#fff"
             strokeWidth="0.75"
           />
           <path
             className="wing-curve-right"
-            d="M215 78 Q150 78 150 145"
+            d="M230 78 A 80 80 0 0 0 150 158"
             fill="none"
             stroke="#fff"
             strokeWidth="0.75"
           />
 
-          {/* Wing fill - V shape with deep quadrant-like concave curves */}
+          {/* Wing fill - V shape with quarter-circle arcs */}
           <path
             className="wing-fill"
-            d="M85 78 
-               Q150 78 150 145 
-               Q150 78 215 78
+            d="M70 78 
+               A 80 80 0 0 1 150 158 
+               A 80 80 0 0 1 230 78
                Z"
             fill="#fff"
           />

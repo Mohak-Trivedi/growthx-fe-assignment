@@ -34,8 +34,8 @@
 
 /* Base state - initial position */
 .wing-line {
-  stroke-dasharray: 130;
-  stroke-dashoffset: 130;
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
 }
 
 /* Animated state */
@@ -45,7 +45,7 @@
 
 @keyframes drawLine {
   0% {
-    stroke-dashoffset: 130;
+    stroke-dashoffset: 160;
   }
   100% {
     stroke-dashoffset: 0;
@@ -60,8 +60,8 @@
 /* Base state - initial position */
 .wing-curve-left,
 .wing-curve-right {
-  stroke-dasharray: 90;
-  stroke-dashoffset: 90;
+  stroke-dasharray: 126;
+  stroke-dashoffset: 126;
 }
 
 /* Animated state */
@@ -75,7 +75,7 @@
 
 @keyframes drawCurve {
   0% {
-    stroke-dashoffset: 90;
+    stroke-dashoffset: 126;
   }
   100% {
     stroke-dashoffset: 0;
