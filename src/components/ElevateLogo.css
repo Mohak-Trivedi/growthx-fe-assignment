@@ -96,10 +96,11 @@
    ============================================ */
 
 .logo-text {
-  font-size: 20px;
-  font-weight: 300;
-  letter-spacing: 0.42em;
-  color: rgba(255, 255, 255, 0.88);
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: 0.62em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.95);
   opacity: 0;
   transform: translateY(100px);
   animation: textRise 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.7s forwards;
@@ -107,7 +108,6 @@
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
     sans-serif;
-  margin-top: 50px;
 }
 
 /* Text rises from below, gap decreases to 50px */
