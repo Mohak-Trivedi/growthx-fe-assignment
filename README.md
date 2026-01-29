@@ -4,7 +4,7 @@ A React + TypeScript application featuring an animated "ELEVATE" logo with SVG g
 
 ## Demo
 
-![Elevate Logo Animation Demo](./demo.gif)
+![Elevate Logo Animation Demo](./animation-demo.gif)
 
 ## Features
 
