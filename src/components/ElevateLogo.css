@@ -11,44 +11,19 @@
 }
 
 /* ============================================
-   STAR ANIMATION
-   Scales from small to full size with glow
-   ============================================ */
-
-.star-group {
-  transform-origin: 150px 36px;
-  transform: scale(0);
-  animation: starReveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-
-@keyframes starReveal {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* ============================================
    WING HORIZONTAL LINE
    Draws from center outward on both sides
    ============================================ */
 
 .wing-line {
-  stroke-dasharray: 230;
-  stroke-dashoffset: 230;
+  stroke-dasharray: 130;
+  stroke-dashoffset: 130;
   animation: drawLine 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.08s forwards;
 }
 
 @keyframes drawLine {
   0% {
-    stroke-dashoffset: 230;
+    stroke-dashoffset: 130;
   }
   100% {
     stroke-dashoffset: 0;
@@ -62,8 +37,8 @@
 
 .wing-curve-left,
 .wing-curve-right {
-  stroke-dasharray: 160;
-  stroke-dashoffset: 160;
+  stroke-dasharray: 90;
+  stroke-dashoffset: 90;
 }
 
 .wing-curve-left {
@@ -76,7 +51,7 @@
 
 @keyframes drawCurve {
   0% {
-    stroke-dashoffset: 160;
+    stroke-dashoffset: 90;
   }
   100% {
     stroke-dashoffset: 0;
